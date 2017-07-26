@@ -1,0 +1,37 @@
+== MailHog ==
+
+1. bash windows10 
+   * cd gocode
+   * bin/MailHog -smtp-bind-addr=0.0.0.0:10025
+2. sur precise 
+    
+    root@precise:/etc/ssmtp# cat ssmtp.conf                                  
+    # Config file for sSMTP sendmail                                         
+    # The person who gets all mail for userids < 1000                        
+    # Make this empty to disable rewriting.                                  
+    root=postmaster                                                          
+
+    # The place where the mail goes. The actual machine name is required no  
+    # MX records are consulted. Commonly mailhosts are named mail.domain.com 
+    mailhub=192.168.33.10                                                    
+
+    # Where will the mail seem to come from?                                 
+    #rewriteDomain=                                                          
+
+    # The full hostname                                                      
+    hostname=precise.local                                                   
+
+    # Are users allowed to set their own From: address?                      
+    # YES - Allow the user to specify their own From: address                
+    # NO - Use the system generated From: address                            
+    #FromLineOverride=YES                                                    
+3. CakePhp
+
+    public $default = array(
+        'transport' => 'Mail',
+//      'transport' => 'Smtp',
+        'from' => array('commercial@mgk.lu' => 'Commercial MGK'),
+        'host' => 'localhost',
+        'port' => 25,
+        'log' => true
+    );

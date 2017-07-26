@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/pi/dotfiles/vim'
+let g:netrw_dirhist_2='/home/pi/dotfiles'
+let g:netrw_dirhist_3='/home/pi/dotfiles/vim'
+let g:netrw_dirhist_4='/home/pi'
+let g:netrw_dirhist_5='/home/marcl/dotfiles/vim'
+let g:netrw_dirhist_6='/home/marcl/dotfiles/vim/.vim'
+let g:netrw_dirhist_7='/home/marcl/dotfiles/vim/.vim/bundle'
+let g:netrw_dirhist_8='/home/marcl/dotfiles/vim/.vim/bundle/vim-sensible'
+let g:netrw_dirhist_9='/home/marcl/dotfiles/vim/.vim/bundle/vim-sensible/plugin'
