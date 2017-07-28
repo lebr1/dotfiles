@@ -10,17 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vimwiki/vimwiki'
-Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'scrooloose/syntastic'
+source ~/.vim/startup/plugins.vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,9 +31,20 @@ filetype plugin indent on    " required
 source ~/.vim/startup/config.vim
 source ~/.vim/startup/color.vim
 source ~/.vim/startup/mappings.vim
-source ~/.vim/startup/php-cs-fixer.vim
-source ~/.vim/startup/phpcomplete.vim
-source ~/.vim/startup/syntastic.vim
+source ~/.vim/startup/plugins-config.vim
+
+" gvim
+if has("gui_running")
+    set lines=60
+    set columns=250
+    if has("gui_gtk2")
+        set guifont=Inconsolata\ 10
+    elseif has("gui_macvim")
+        set guifont=Menlo\ Regular:h14
+    elseif has("gui_win32")
+        set guifont=Consolas:h11:cANSI
+    endif
+endif
 
 " Host specific config ===================================================
 " check for the existence of a host-specific vimrc file and source it
