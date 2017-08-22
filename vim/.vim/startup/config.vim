@@ -127,3 +127,12 @@ set tags+=./.phpctags
 set tags+=.phpctags
 command! MakeTags !phpctags -f .phpctags -R
 
+" Folding
+if has('folding')
+  " if has('windows')
+  "   set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+  " endif
+  set foldmethod=indent               " not as cool as syntax, but faster
+  set foldlevelstart=1                " start unfolded
+endif
+

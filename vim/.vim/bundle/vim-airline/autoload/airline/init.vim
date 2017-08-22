@@ -18,13 +18,14 @@ function! airline#init#bootstrap()
 
   let g:airline#init#bootstrapping = 1
 
-  let g:airline#util#async = v:version >= 800 && has('job')
-  let g:airline#util#is_windows = has('win32') || has('win64')
+  let g:airline#init#async = (v:version >= 800 && has('job'))
+  let g:airline#init#is_windows = has('win32') || has('win64')
 
   call s:check_defined('g:airline_detect_modified', 1)
   call s:check_defined('g:airline_detect_paste', 1)
   call s:check_defined('g:airline_detect_crypt', 1)
   call s:check_defined('g:airline_detect_spell', 1)
+  call s:check_defined('g:airline_detect_spelllang', 1)
   call s:check_defined('g:airline_detect_iminsert', 0)
   call s:check_defined('g:airline_inactive_collapse', 1)
   call s:check_defined('g:airline_exclude_filenames', ['DebuggerWatch','DebuggerStack','DebuggerStatus'])
